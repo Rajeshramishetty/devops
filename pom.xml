@@ -2,17 +2,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>www.gmail.com</groupId>
-    <artifactId>com.gmail</artifactId>
-    <version>gmail</version>
+    <groupId>skype.com</groupId>
+    <artifactId>com.skype</artifactId>
+    <version>skype</version>
     <packaging>jar</packaging>
 
-    <name>com.gmail</name>
+    <name>com.skype</name>
     <description>Blank project for GraalVM + Spring MVC</description>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.1.RELEASE</version> <!-- lookup parent from repository -->
+        <version>2.2.2.RELEASE</version> <!-- lookup parent from repository -->
     </parent>
     <properties>
         <java.version>1.8</java.version>
@@ -100,13 +100,13 @@
         <profile>
             <id>graal</id>
             <properties>
-                <graal.version>19.2.0.1</graal.version>
+                <graal.version>19.2.1</graal.version>
             </properties>
             <dependencies>
                 <dependency>
-                    <groupId>com.github.spring-projects-experimental</groupId>
-                    <artifactId>spring-graal-native-image</artifactId>
-                    <version>82abc7c615</version>
+                    <groupId>org.springframework.experimental</groupId>
+                    <artifactId>spring-graal-native-feature</artifactId>
+                    <version>0.6.0.BUILD-SNAPSHOT</version>
                 </dependency>
             </dependencies>
             <build>
@@ -144,8 +144,11 @@
 
     <repositories>
         <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>https://repo.spring.io/snapshot</url>
+            <snapshots>
+            </snapshots>
         </repository>
     </repositories>
 </project>
